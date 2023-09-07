@@ -1,14 +1,18 @@
 package lesson_1
 
 fun main(){
-    val hours: String = "01"
-    val minutes: String = "48"
-    val seconds: String = "00"
-    val colonChar: Char = ':'
+    val seconds = 6480
+    val hours = seconds / 3600
+    val minutes = (seconds % 3600) / 60
+    val secondsRemain = seconds % 60
 
-    print(hours)
-    print(colonChar)
-    print(minutes)
-    print(colonChar)
-    print(seconds)
+    val hoursNew = String.format("%02d", hours)
+    val minutesNew = String.format("%02d",minutes)
+    val secondsRemainNew = String.format("%02d",secondsRemain)
+
+    print(hoursNew)
+    print(':')
+    print(minutesNew)
+    print(':')
+    print(secondsRemainNew)
 }
