@@ -6,13 +6,5 @@ fun main(){
     val minutes = (seconds % 3600) / 60
     val secondsRemain = seconds % 60
 
-    val hoursNew = String.format("%02d", hours)
-    val minutesNew = String.format("%02d",minutes)
-    val secondsRemainNew = String.format("%02d",secondsRemain)
-
-    print(hoursNew)
-    print(':')
-    print(minutesNew)
-    print(':')
-    print(secondsRemainNew)
+    println(String.format("%02d:%02d:%02d", hours, minutes, secondsRemain))
 }
