@@ -16,10 +16,10 @@ fun main() {
     println("Погода благоприятна? (true/false)")
     val isWeatherFavorable = readln().toBoolean() == true
 
-    val sailCondition = (isShipDamage == IS_SHIP_DAMAGED && crewNum in CREW_NUMBER_MIN..CREW_NUMBER_MAX
+    val sailCondit = (isShipDamage == IS_SHIP_DAMAGED && crewNum in CREW_NUMBER_MIN..CREW_NUMBER_MAX
             && provisionBoxes > PROVISION_BOXES && isWeatherFavorable == IS_WEATHER_FAVORABLE)
             || (crewNum == CREW_NUMBER_MAX && provisionBoxes > PROVISION_BOXES &&
             isWeatherFavorable == IS_WEATHER_FAVORABLE)
 
-    println("Может ли корабль отправиться в плавание? $sailCondition")
+    println("Может ли корабль отправиться в плавание? $sailCondit")
 }
