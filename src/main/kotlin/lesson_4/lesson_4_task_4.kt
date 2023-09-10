@@ -3,10 +3,10 @@ package lesson_4
 fun main() {
     val day = 5
     val isDayEven = day % 2 == 0
-    val armsTraining = isDayEven == false
-    val legsTraining = isDayEven == true
-    val backTraining = isDayEven == true
-    val absTraining = isDayEven == false
+    val armsTraining = !isDayEven
+    val legsTraining = isDayEven
+    val backTraining = isDayEven
+    val absTraining = !isDayEven
 
     println(
         """
