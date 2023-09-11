@@ -18,7 +18,7 @@ fun main() {
 
         else -> {
             println("Имя пользователя $userName не существует. Вам необходимо зарегистрироваться!")
-            println("Введите имя:")
+            println("Введите имя пользователя:")
             val userNameNew = readln()
             println("Введите пароль:")
             val userPassNew = readln()
