@@ -3,17 +3,26 @@ package lesson_5
 fun main() {
     println("Введите имя пользователя:")
     val userName = readln()
+    val userNameRegd = "Zaphod"
+    val userPassRegd = "PanGalactic"
 
     when (userName) {
-        "Zaphod" -> {
+        userNameRegd -> {
             println("Здравствуйте $userName! Введите пароль:")
-            val password = readln()
-            when (password) {
-                "PanGalactic" -> println("Добро пожаловать!")
+            val userPassword = readln()
+            when (userPassword) {
+                userPassRegd -> println("Добро пожаловать!")
                 else -> println("Неверный пароль")
             }
         }
 
-        else -> println("Имя пользователя $userName не существует. Вам необходимо зарегистрироваться!")
+        else -> {
+            println("Имя пользователя $userName не существует. Вам необходимо зарегистрироваться!")
+            println("Введите имя:")
+            val userNameNew = readln()
+            println("Введите пароль:")
+            val userPassNew = readln()
+            println("Вы зарегистрировались как: $userNameNew \nЗапомните Ваш пароль: $userPassNew")
+        }
     }
 }
