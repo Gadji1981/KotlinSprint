@@ -3,12 +3,8 @@ package lesson_6
 fun main() {
     println("Введите количество секунд:")
     val seconds = readln().toInt()
-    var secCounter = 0
+    val secCounter = seconds * 1000
 
-    while ((seconds + 1) > secCounter) {
-        println("Прошло ${secCounter++} секунд")
-        Thread.sleep(1000)
-
-
-    }
+    Thread.sleep(secCounter.toLong())
+    println("Прошло $seconds секунд")
 }
