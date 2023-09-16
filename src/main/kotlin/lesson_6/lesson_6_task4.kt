@@ -13,8 +13,7 @@ fun main() {
             return
         } else {
             attempts--
-            println()
-            println("Неверно! Попробуйте снова. Осталось $attempts попыток.")
+            println("\nНеверно! Попробуйте снова. Осталось $attempts попыток.")
         }
     }
     println("Было загадано число $randomNum")
