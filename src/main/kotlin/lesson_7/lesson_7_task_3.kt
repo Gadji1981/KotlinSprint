@@ -1,13 +1,11 @@
 package lesson_7
 
 fun main() {
-    println("Ведите любое положительно число число:")
+    println("Введите любое положительно число:")
     val inputNum = readln().toInt()
     val lastNum = inputNum
 
-    println("Все четные числа от 0 до $lastNum")
+    val evenNumber = (0..lastNum step 2).joinToString(", ")
 
-    for (i in 0..lastNum step 2) {
-        print("$i, ")
-    }
+    println("Все четные числа от 0 до $lastNum \n$evenNumber")
 }
