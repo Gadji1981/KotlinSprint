@@ -7,8 +7,11 @@ fun main() {
     val lowerCharRange = 'a'..'z'
     val upperCharRange = 'A'..'Z'
 
-    for (i in 1..stringLength) {
-        val randomSymbol = (numRange + lowerCharRange + upperCharRange).random()
-        print(randomSymbol)
+    val pass = buildString {
+        for (i in 1..stringLength) {
+            val randomSymbol = (numRange + lowerCharRange + upperCharRange).random()
+            append(randomSymbol)
+        }
     }
+    //println(pass)
 }
