@@ -5,16 +5,11 @@ fun main() {
     val alphaRange = 'a'..'z'
     val numRange = 0..9
 
-    var password = ""
-
-    for (i in 0 until passLength)
-        if (i % 2 == 0) {
-            val randomIndex = alphaRange.random()
-            password += randomIndex
-        } else {
-            val randomIndex = numRange.random()
-            password += randomIndex
+    val password = buildString {
+        for (i in 0 until passLength) {
+            val randomIndex = if (i % 2 == 0) alphaRange.random() else numRange.random()
+            append(randomIndex)
         }
-
+    }
     println(password)
 }
