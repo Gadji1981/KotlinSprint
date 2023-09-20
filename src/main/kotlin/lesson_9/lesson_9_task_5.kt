@@ -2,7 +2,7 @@ package lesson_9
 
 fun main() {
     val ingredientsList = mutableSetOf<String>()
-    println("Введите пять названий ингредиентов:")
+    println("Введите пять ингредиентов:")
 
     for (i in 0 until 5) {
         print("Ингредиент номер ${i + 1}: ")
