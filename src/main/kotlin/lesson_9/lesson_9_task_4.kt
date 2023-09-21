@@ -1,5 +1,6 @@
 package lesson_9
 
+const val TOTAL_INPUTS = 5
 fun main() {
     val emptyList = mutableListOf<String>()
 
@@ -8,10 +9,10 @@ fun main() {
 
     val values = userInput.split(",")
 
-    if (values.size == 5) {
+    if (values.size == TOTAL_INPUTS) {
         emptyList.addAll(values)
         val sortedList = emptyList.sorted()
-        println(sortedList)
+        println(sortedList.joinToString(",").trim())
     } else {
         println("Вы ввели неверное количество значений.")
     }
