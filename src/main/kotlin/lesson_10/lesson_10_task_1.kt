@@ -1,10 +1,10 @@
-package lesson_10
-
-import kotlin.random.Random
-
 fun main() {
-    val humanScore = rollDice("Игрок")
-    val compScore = rollDice("Компьютер")
+
+    val humanScore = rollDice()
+    println("Человек выбросил кости в сумме $humanScore")
+
+    val compScore = rollDice()
+    println("Компьютер выбросил кости в сумме $compScore")
 
     if (humanScore > compScore) {
         println("Победило человечество")
@@ -15,11 +15,8 @@ fun main() {
     }
 }
 
-fun rollDice(player: String): Int {
-    println("$player бросает кости...")
-    val dice1 = Random.nextInt(1, 7)
-    val dice2 = Random.nextInt(1, 7)
-    val totalScore = dice1 + dice2
-    println("$player выбросил $dice1 и $dice2, общий счет = $totalScore")
-    return (totalScore)
+fun rollDice(): Int {
+    val dice1 = (1 until 7).random()
+    val dice2 = (1 until 7).random()
+    return dice1 + dice2
 }
