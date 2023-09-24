@@ -2,20 +2,16 @@ package lesson_10
 
 fun main() {
     println("Введите логин:")
-    val login = readLine() ?: ""
+    val login = readln()
 
     println("Введите пароль:")
-    val password = readLine() ?: ""
+    val password = readln()
 
-    if (isInputDataLengthValid(login, password)) {
+    if (isInputDataLengthValid(login, password) != true) {
         println("Приветствуем вас, $login!")
+    } else {
+        println("Логин или пароль недостаточно длинные")
     }
 }
 
-fun isInputDataLengthValid(login: String, password: String): Boolean {
-    if (login.length < 4 || password.length < 4) {
-        println("Логин или пароль недостаточно длинные")
-        return false
-    }
-    return true
-}
+fun isInputDataLengthValid(login: String, password: String) = login.length < 4 || password.length < 4
