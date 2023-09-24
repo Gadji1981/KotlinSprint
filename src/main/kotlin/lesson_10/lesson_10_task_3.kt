@@ -1,7 +1,7 @@
 package lesson_10
 
 fun main() {
-    println("Enter length of generating pass")
+    println("Укажите количество символов для генерации пароля:")
     val passLengthInput = readln().toInt()
 
     val generatedPass = generatePassword(passLengthInput)
