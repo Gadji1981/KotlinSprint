@@ -33,13 +33,9 @@ fun rollDice(): Int {
 }
 
 fun playAgainChoise(): Boolean {
-    while (true) {
-        println("Желаете продолжить игру? да/нет")
-        val playAgain = readln()
+    println("Желаете продолжить игру? да/нет")
+    val playAgain = readln()
 
-        when (playAgain.lowercase()) {
-            "да" -> return true
-            "нет" -> return false
-        }
-    }
+    return if (playAgain.lowercase() == "да") true
+    else false
 }
