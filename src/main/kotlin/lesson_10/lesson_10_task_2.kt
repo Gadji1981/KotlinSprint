@@ -7,11 +7,11 @@ fun main() {
     println("Введите пароль:")
     val password = readln()
 
-    if (loginAndPassCheck(login, password) == true) {
+    if (checkLoginAndPass(login, password)) {
         println("Приветствуем вас, $login!")
     } else {
         println("Логин или пароль недостаточно длинные")
     }
 }
 
-fun loginAndPassCheck(login: String, password: String) = login.length > 4 || password.length > 4
+fun checkLoginAndPass(login: String, password: String) = login.length > 4 || password.length > 4
