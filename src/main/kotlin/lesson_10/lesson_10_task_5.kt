@@ -1,39 +1,48 @@
 package lesson_10
 
 fun main() {
-    println("Введите имя пользователя (не менее четырех символов):")
-    val userLoginInput = readln()
+    var newUserInput = " "
+    var loginInput = " "
+    var generatedPassword = " "
+    var passwordInput = " "
+    var generatedSms = " "
+    var smsInput = " "
 
-    while (true) {
-        val generatedPassword = generatePassword()
-        val generatedSms = generateSms()
+    do {
+        println("Введите имя пользователя (не менее четырех символов):")
+        newUserInput = readln()
 
-        if (checkLoginLength(userLoginInput)) {
-            println("Ваш пароль: $generatedPassword")
-        } else {
-            println("Имя пользователя менее четырех символов.")
-        }
+        if (!checkLoginLength(newUserInput)) println("Имя пользователя менее четырех символов.")
+    } while (!checkLoginLength(newUserInput))
 
+    do {
+        generatedPassword = generatePassword()
+        println("Ваш пароль: $generatedPassword")
         println("Введите имя пользователя:")
-        val loginInput = readln()
+        loginInput = readLine() ?: ""
 
         println("Введите пароль:")
-        val passwordInput = readln()
+        passwordInput = readLine() ?: ""
 
-        if (loginInput == userLoginInput && passwordInput == generatedPassword) {
-            println("Введите код из СМС \"$generatedSms\"")
-            val smsInput = readln()
-
-            if (smsInput == generatedSms) {
-                println("Добро пожаловать $loginInput")
-                break
-            } else {
-                println("Код не подтвержден!")
-            }
+        if (loginInput != newUserInput || passwordInput != generatedPassword) {
+            println("Неверное имя пользователя или пароль!")
         } else {
-            println("Не верный имя пользователя или пароль!")
+            break
         }
-    }
+    } while (true)
+
+    do {
+        generatedSms = generateSms()
+        println("Введите код из СМС \"$generatedSms\"")
+        smsInput = readln()
+
+        if (smsInput == generatedSms) {
+            println("Добро пожаловать $loginInput")
+            break
+        } else {
+            println("Код не подтвержден!")
+        }
+    } while (true)
 }
 
 fun checkLoginLength(userLogin: String): Boolean = userLogin.length >= 4
