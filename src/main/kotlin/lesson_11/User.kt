@@ -25,7 +25,8 @@ class User (val id: Int, val userName: String, var password: String, val userEma
 
         if (userPasswordInput == password) {
             println("Введите новый пароль:")
-            val password = readln()
+            val newPassword = readln()
+            password = newPassword
             println("Пароль изменен.")
         } else {
             println("Пароль введен не верно.")
@@ -33,7 +34,7 @@ class User (val id: Int, val userName: String, var password: String, val userEma
     }
 
     fun sendEmail(message: String) {
-        println("Сообщение отправленно: $userEmail: \n$message")
+        println("Почта получателя: $userEmail: \n$message")
     }
 
 

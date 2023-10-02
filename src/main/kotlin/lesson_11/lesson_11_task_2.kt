@@ -12,5 +12,5 @@ fun main() {
 
     userOne.displayUserInfo()
 
-    userOne.sendEmail("Доброго времени суток, ${userOne.userName}")
+    userOne.sendEmail("Доброго времени суток, ${userOne.userName}!")
 }
