@@ -1,28 +1,26 @@
 package lesson_10
 
 fun main() {
-    var newUserInput = " "
-    var loginInput = " "
-    var generatedPassword = " "
-    var passwordInput = " "
-    var generatedSms = " "
-    var smsInput = " "
+    var newUserInput = ""
+    var loginInput = ""
+    var generatedPassword = ""
+    var passwordInput = ""
+    var generatedSms = ""
+    var smsInput = ""
 
     do {
         println("Введите имя пользователя (не менее четырех символов):")
         newUserInput = readln()
-
-        if (!checkLoginLength(newUserInput)) println("Имя пользователя менее четырех символов.")
     } while (!checkLoginLength(newUserInput))
 
     do {
         generatedPassword = generatePassword()
         println("Ваш пароль: $generatedPassword")
         println("Введите имя пользователя:")
-        loginInput = readLine() ?: ""
+        loginInput = readln()
 
         println("Введите пароль:")
-        passwordInput = readLine() ?: ""
+        passwordInput = readln()
 
         if (loginInput != newUserInput || passwordInput != generatedPassword) {
             println("Неверное имя пользователя или пароль!")
@@ -45,7 +43,12 @@ fun main() {
     } while (true)
 }
 
-fun checkLoginLength(userLogin: String): Boolean = userLogin.length >= 4
+fun checkLoginLength(userLogin: String): Boolean {
+    return if (userLogin.length < 4) {
+        println("Имя пользователя менее четырех символов.")
+        false
+    } else true
+}
 
 fun generateSms(): String = (1000..9999).random().toString()
 
@@ -55,10 +58,10 @@ fun generatePassword(): String {
     val lettersCaps = 'A'..'Z'
     val allChars = numbers + lettersSmall + lettersCaps
 
-    val pass = StringBuilder()
+    var pass = ""
     for (i in 0 until 6) {
         val randomChar = allChars.random()
-        pass.append(randomChar)
+        pass += randomChar
     }
-    return pass.toString()
+    return pass
 }
