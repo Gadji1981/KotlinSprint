@@ -1,5 +1,9 @@
 package lesson_11
 
+class User(val avatar: String, val userName: String, val status: String)
+
+class Rooms(val coverImage: String, val roomTitle: String, val participants: List<User>)
+
 fun main() {
     val roomOne = Rooms(
         "Обложка 1.jpg", "Название комнаты 1", listOf(
