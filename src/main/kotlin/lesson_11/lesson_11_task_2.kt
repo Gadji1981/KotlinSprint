@@ -1,6 +1,12 @@
 package lesson_11
 
-class User(val id: Int, val userName: String, var password: String, val userEmail: String, var bio: String? = null) {
+class User(
+    val id: Int,
+    val userName: String,
+    var password: String,
+    val userEmail: String,
+    var bio: String? = null
+) {
 
     fun displayUserInfo() {
         println(
@@ -43,7 +49,6 @@ class User(val id: Int, val userName: String, var password: String, val userEmai
 
 fun main() {
     val userOne = User(1, "Vasya", "qwerty", "vasya@mail.ru")
-    //val userTwo = User(2, "Bob", "12345", "bob@gmail.com")
 
     userOne.displayUserInfo()
 
