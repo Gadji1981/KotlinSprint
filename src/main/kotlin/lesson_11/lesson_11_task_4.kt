@@ -5,11 +5,11 @@ class Contact(
     val contactFirstName: String,
     val contactSecondName: String,
     val contactEmail: String,
-    val phoneNumbers: List<PhoneNumbers>,
+    val phoneNumbers: List<PhoneNumber>,
     val relatedPeople: List<RelatedPeople>,
 )
 
-class CommunicationServices(
+class CommunicationService(
     val smsButtonIcon: String,
     val smsButtonTitle: String,
     val callButtonIcon: String,
@@ -20,7 +20,7 @@ class CommunicationServices(
     val emailButtonTitle: String,
 )
 
-class PhoneNumbers(
+class PhoneNumber(
     val phoneType: String,
     val phoneNuber: String,
 )
@@ -35,15 +35,18 @@ fun main() {
         "Василий",
         "Пупкин",
         "example@example.com",
-        listOf(PhoneNumbers("Мобильный", "+1234567890"),
-            PhoneNumbers("Домашний", "+749912345678")
+        listOf(
+            PhoneNumber("Мобильный", "+1234567890"),
+            PhoneNumber("Домашний", "+749912345678")
         ),
-        listOf(RelatedPeople("Жена"),
+        listOf(
+            RelatedPeople("Жена"),
             RelatedPeople("Подруга"),
-            RelatedPeople("Друг")),
+            RelatedPeople("Друг")
+        ),
     )
 
-    val communication = CommunicationServices(
+    val communication = CommunicationService(
         "ИКОНКА_СМС.jpg", "Написать",
         "ИКОНКА_ТЕЛЕФОН.jpg", "Вызов",
         "ИКОНКА_ВИДЕО.jpg", "Видео",
