@@ -4,28 +4,32 @@ class User(
     val avatar: String,
     val userName: String,
     val status: String,
-)
+) {
+    fun printStatus() {
+        println(status)
+    }
+}
 
-class Rooms(
+class Room(
     val coverImage: String,
     val roomTitle: String,
-    val participants: List<User>,
+    val participants: List<User>
 )
 
 fun main() {
-    val roomOne = Rooms(
+    val roomOne = Room(
         "Обложка 1.jpg", "Название комнаты 1", listOf(
-            User("Аваторка 1.jpg", "Пользователь 1", "Разговаривает"),
-            User("Аваторка 2.jpg", "Пользователь 2", "Микрофон выключен"),
-            User("Аваторка 3.jpg", "Пользователь 3", "Пользователь заглушен")
+            User("Аватарка 1.jpg", "Пользователь 1", "Разговаривает"),
+            User("Аватарка 2.jpg", "Пользователь 2", "Микрофон выключен"),
+            User("Аватарка 3.jpg", "Пользователь 3", "Пользователь заглушен")
         )
     )
 
-    val roomTwo = Rooms(
+    val roomTwo = Room(
         "Обложка 2.jpg", "Название комнаты 2", listOf(
-            User("Аваторка А.jpg", "Пользователь А", "Микрофон выключен"),
-            User("Аваторка Б.jpg", "Пользователь Б", "Пользователь заглушен"),
-            User("Аваторка В.jpg", "Пользователь В", "Разговаривает")
+            User("Аватарка А.jpg", "Пользователь А", "Микрофон выключен"),
+            User("Аватарка Б.jpg", "Пользователь Б", "Пользователь заглушен"),
+            User("Аватарка В.jpg", "Пользователь В", "Разговаривает")
         )
     )
 
@@ -38,7 +42,8 @@ fun main() {
             |""".trimMargin()
         )
         for (participant in room.participants) {
-            println("${participant.avatar}, ${participant.userName}, ${participant.status}")
+            println("${participant.avatar}, ${participant.userName}")
+            participant.printStatus()
         }
     }
 }
