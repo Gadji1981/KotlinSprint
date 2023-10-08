@@ -1,30 +1,34 @@
 package lesson_11
 
+
 class User(val id: Int, val userName: String)
 
 class Message(val id: Int, val user: User, val message: String)
 
-class Forum{
+class Forum {
     val users = mutableListOf<User>()
-    val message = mutableListOf<Message>()
+    val messages = mutableListOf<Message>()
     var userId = 1
     var messageId = 1
 
-    fun createNewUser(userName: String): User {
-        val newUser = User(userId++, userName)
+    fun createNewUser(name: String): User {
+        val newUser = User(userId++, name)
         users.add(newUser)
         return newUser
     }
 
-    fun createNewMessage() { // Stuck on this function, have no idea how to write code for the message function
-
+    fun createNewMessage(userId: Int, message: String): Message {
+        val user = users.find { it.id == userId }
+        val newMessage = Message(messageId++, user!!, message)
+        messages.add(newMessage)
+        return newMessage
     }
 
-    fun printThread() { //temp fun... I will rewright it as soon as solve the previous problem
-        for (user in users)
-        println("User ${user.id}: Username: ${user.userName}")
+    fun printThread() {
+        for (message in messages) {
+            println("${message.user.userName}: ${message.message}")
+        }
     }
-
 }
 
 fun main() {
@@ -32,6 +36,11 @@ fun main() {
 
     val user1 = forum.createNewUser("Vasya")
     val user2 = forum.createNewUser("Bob")
+
+    forum.createNewMessage(user1.id, "Hi everyone!")
+    forum.createNewMessage(user2.id, "Hi, ${user1.userName}")
+    forum.createNewMessage(user1.id, "How are you doing, ${user2.userName}?")
+    forum.createNewMessage(user2.id, "Well... can't complain...:)")
 
     forum.printThread()
 }
