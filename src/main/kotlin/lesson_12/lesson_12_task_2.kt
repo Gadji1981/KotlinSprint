@@ -1,6 +1,6 @@
 package lesson_12
 
-class WeatherTracker {
+class WeatherForecast {
     var dayTempriture = 29.7
     var nightTempriture = 23.3
     var hasRain = false
@@ -19,19 +19,19 @@ class WeatherTracker {
 }
 
 fun main() {
-    val weatherInfo1 = WeatherTracker()
+    val weatherInfo1 = WeatherForecast()
     weatherInfo1.dayTempriture = 25.2
     weatherInfo1.nightTempriture = 17.4
     weatherInfo1.hasRain = false
     weatherInfo1.atmosPreasure = 745.0
 
-    val weatherInfo2 = WeatherTracker()
+    val weatherInfo2 = WeatherForecast()
     weatherInfo2.dayTempriture = 22.6
     weatherInfo2.nightTempriture = 13.1
     weatherInfo2.hasRain = true
     weatherInfo2.atmosPreasure = 760.7
 
-    val weatherInfo3 = WeatherTracker()
+    val weatherInfo3 = WeatherForecast()
 
     println("Погода на сегодня:")
     println(weatherInfo1.printWeatherInfo())
