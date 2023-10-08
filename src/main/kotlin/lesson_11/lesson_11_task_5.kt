@@ -3,7 +3,7 @@ package lesson_11
 
 class User(val id: Int, val userName: String)
 
-class Message(val id: Int, val user: User, val message: String)
+class Message(val id: Int, val user: String, val message: String)
 
 class Forum {
     val users = mutableListOf<User>()
@@ -19,14 +19,14 @@ class Forum {
 
     fun createNewMessage(userId: Int, message: String): Message {
         val user = users.find { it.id == userId }
-        val newMessage = Message(messageId++, user!!, message)
+        val newMessage = Message(messageId++, user?.userName ?: "", message)
         messages.add(newMessage)
         return newMessage
     }
 
     fun printThread() {
         for (message in messages) {
-            println("${message.user.userName}: ${message.message}")
+            println("${message.user}: ${message.message}")
         }
     }
 }
