@@ -1,6 +1,6 @@
 package lesson_11
 
-class User(
+class User2(
     val id: Int,
     val userName: String,
     var password: String,
@@ -48,7 +48,7 @@ class User(
 }
 
 fun main() {
-    val userOne = User(1, "Vasya", "qwerty", "vasya@mail.ru")
+    val userOne = User2(1, "Vasya", "qwerty", "vasya@mail.ru")
 
     userOne.displayUserInfo()
 
