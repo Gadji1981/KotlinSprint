@@ -1,18 +1,18 @@
 package lesson_11
 
 
-class User(val id: Int, val userName: String)
+class User4(val id: Int, val userName: String)
 
 class Message(val id: Int, val user: String, val message: String)
 
 class Forum {
-    val users = mutableListOf<User>()
+    val users = mutableListOf<User4>()
     val messages = mutableListOf<Message>()
     var userId = 1
     var messageId = 1
 
-    fun createNewUser(name: String): User {
-        val newUser = User(userId++, name)
+    fun createNewUser(name: String): User4 {
+        val newUser = User4(userId++, name)
         users.add(newUser)
         return newUser
     }
