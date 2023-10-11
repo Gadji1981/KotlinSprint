@@ -1,30 +1,15 @@
 package lesson_12
 
 class WeatherFrcst(dayTempriture: Double, nightTempriture: Double, hasRain: Boolean, atmosPreasure: Double) {
-    var dayTempriture = dayTempriture
 
     init {
-        println("Погода днем: $dayTempriture")
+        println("""
+            |Погода днем: $dayTempriture
+            |Погода ночью: $nightTempriture
+            |Дождь: ${if (hasRain) "Да" else "Нет"}
+            |Атмосферное давление: $atmosPreasure
+        """.trimMargin())
     }
-
-    var nightTempriture = nightTempriture
-
-    init {
-        println("Погода ночью: $nightTempriture")
-    }
-
-    var hasRain = hasRain
-
-    init {
-        println("Дождь: ${if (hasRain) "Да" else "Нет"}")
-    }
-
-    var atmosPreasure = atmosPreasure
-
-    init {
-        println("Атмосферное давление: $atmosPreasure")
-    }
-
 }
 
 fun main() {
