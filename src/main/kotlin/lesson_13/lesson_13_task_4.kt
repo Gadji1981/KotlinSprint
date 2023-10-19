@@ -26,14 +26,17 @@ fun main() {
         println("Введите компанию (или нажмите Enter для пропуска):")
         val company = readLine()
 
-        phoneBook.add(PhoneBook3(name = name, phoneNumber = phoneNumber, company = company))
+        if (company == "") phoneBook.add(PhoneBook3(name = name, phoneNumber = phoneNumber, company = null))
+        else phoneBook.add(PhoneBook3(name = name, phoneNumber = phoneNumber, company = company))
+
+
     }
 
     for (contacts in phoneBook) {
         println("""
             |Имя: ${contacts.name}
             |Номер: ${contacts.phoneNumber}
-            |Компания: ${contacts.company}
+            |Компания: ${contacts.company ?: "<не указано>"}
             |
         """.trimMargin())
     }
