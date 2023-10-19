@@ -1,13 +1,13 @@
 package lesson_13
 
-class PhoneBook3(
+class PhoneBook4(
     val name: String,
     val phoneNumber: Long,
     val company: String?
 )
 
 fun main() {
-    val phoneBook = mutableListOf<PhoneBook3>()
+    val phoneBook = mutableListOf<PhoneBook4>()
 
     while (true) {
         println("Введите имя (или 'стоп' для завершения):")
@@ -26,8 +26,8 @@ fun main() {
         println("Введите компанию (или нажмите Enter для пропуска):")
         val company = readLine()
 
-        if (company == "") phoneBook.add(PhoneBook3(name = name, phoneNumber = phoneNumber, company = null))
-        else phoneBook.add(PhoneBook3(name = name, phoneNumber = phoneNumber, company = company))
+        if (company == "") phoneBook.add(PhoneBook4(name = name, phoneNumber = phoneNumber, company = null))
+        else phoneBook.add(PhoneBook4(name = name, phoneNumber = phoneNumber, company = company))
 
 
     }
