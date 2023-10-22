@@ -80,5 +80,4 @@ fun main() {
     ship.getInfo()
     cargo.getInfo()
     iceBreaker.getInfo()
-
 }
